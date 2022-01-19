@@ -18,8 +18,7 @@ export default function handler(req, res) {
   }
   const packageVersions = Object.keys(pkgInfo.versions);
   const sortedVersions = semverSort(packageVersions);
-  if (range === 'latest') {
-    
+  if (range === 'latest') {    
     const latestVersion = sortedVersions[sortedVersions.length - 1];
     return res.json({ entry: pkgInfo.versions[latestVersion].entry, });
   }
@@ -31,7 +30,7 @@ export default function handler(req, res) {
   res
     .status(200)
     .json({
-      name: "John Doe",
+      name: "John Doe 2",
       packageVersions,
       name,
       range,
