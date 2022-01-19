@@ -11,7 +11,7 @@
                 "entry": "helloworld@https://github.customerlabs.com.au/pages/iagcl/helloworld-mfe-guest/assets/v0-1-2/remoteEntry.js"
             },
             "2.0.2": {
-                "entry": "helloworld@https://github.customerlabs.com.au/pages/iagcl/helloworld-mfe-guest/assets/v0-1-2/remoteEntry.js"
+                "entry": "helloworld@https://github.customerlabs.com.au/pages/iagcl/helloworld-mfe-guest/assets/v2-0-2/remoteEntry.js"
             }
         }
     }
