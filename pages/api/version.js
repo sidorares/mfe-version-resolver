@@ -30,7 +30,7 @@ export default function handler(req, res) {
   res
     .status(200)
     .json({
-      name: "John Doe 2",
+      name2: "John Doe 2",
       packageVersions,
       latestVersion,
       name,
