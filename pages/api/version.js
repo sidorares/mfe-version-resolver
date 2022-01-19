@@ -18,10 +18,10 @@ export default function handler(req, res) {
   }
   const packageVersions = Object.keys(pkgInfo.versions);
   const sortedVersions = semverSort(packageVersions);
-  if (range === 'latest') {    
-    const latestVersion = sortedVersions[sortedVersions.length - 1];
-    return res.json({ entry: pkgInfo.versions[latestVersion].entry, });
-  }
+  const latestVersion = sortedVersions[sortedVersions.length - 1];
+  //if (range === 'latest') {    
+  //  return res.json({ entry: pkgInfo.versions[latestVersion].entry, });
+  //}
 
   const version = semverMaxSatisfying(packageVersions, range);
   if (!version) {
@@ -32,6 +32,7 @@ export default function handler(req, res) {
     .json({
       name: "John Doe 2",
       packageVersions,
+      latestVersion,
       name,
       range,
       sortedVersions,
