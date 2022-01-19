@@ -30,12 +30,6 @@ export default function handler(req, res) {
   res
     .status(200)
     .json({
-      name2: "John Doe 2",
-      packageVersions,
-      latestVersion,
-      name,
-      range,
-      sortedVersions,
       entry: pkgInfo.versions[version].entry,
     });
 }
