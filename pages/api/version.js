@@ -1,9 +1,15 @@
 import semverMaxSatisfying from "semver/ranges/max-satisfying";
 import semverSort from "semver/functions/sort";
-
+import NextCors from 'nextjs-cors';
 import versions from "../../registry.json";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
+  await NextCors(req, res, {
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    origin: '*',
+    optionsSuccessStatus: 200,
+  });
+
   const { name, range } = req.query;
 
   if (!name) {
