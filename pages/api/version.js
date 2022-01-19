@@ -1,5 +1,5 @@
 import semverMaxSatisfying from "semver/ranges/max-satisfying";
-import semverSort from "semver/ranges/sort";
+import semverSort from "semver/functions/sort";
 
 import versions from "../../registry.json";
 
