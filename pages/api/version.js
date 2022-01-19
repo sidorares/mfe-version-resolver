@@ -16,6 +16,9 @@ export default function handler(req, res) {
   }
   const packageVersions = Object.keys(pkgInfo.versions);
   const version = semverMaxSatisfying(packageVersions, range);
+  if (!version) {
+    return res.status(404).send("No version found");
+  }
   res
     .status(200)
     .json({
