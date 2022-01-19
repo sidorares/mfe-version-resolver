@@ -17,8 +17,9 @@ export default function handler(req, res) {
     res.status(404).send("Package not found");
   }
   const packageVersions = Object.keys(pkgInfo.versions);
+  const sortedVersions = semverSort(packageVersions);
   if (range === 'latest') {
-    const sortedVersions = semverSort(packageVersions);
+    
     const latestVersion = sortedVersions[sortedVersions.length - 1];
     return res.json({ entry: pkgInfo.versions[latestVersion].entry, });
   }
@@ -34,6 +35,7 @@ export default function handler(req, res) {
       packageVersions,
       name,
       range,
+      sortedVersions,
       entry: pkgInfo.versions[version].entry,
     });
 }
