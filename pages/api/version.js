@@ -23,6 +23,7 @@ export default function handler(req, res) {
     .status(200)
     .json({
       name: "John Doe",
+      packageVersions,
       name,
       range,
       entry: pkgInfo.versions[version].entry,
