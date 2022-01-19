@@ -1,0 +1,16 @@
+{
+    "jsonschema-form": {
+        "0.0.1": {
+          "entry": "helloworld@https://github.customerlabs.com.au/pages/iagcl/helloworld-mfe-guest/assets/v0-0-1/remoteEntry.js"
+        },
+        "0.0.2": {
+          "entry": "helloworld@https://github.customerlabs.com.au/pages/iagcl/helloworld-mfe-guest/assets/v0-0-2/remoteEntry.js"
+        },
+        "0.1.2": {
+          "entry": "helloworld@https://github.customerlabs.com.au/pages/iagcl/helloworld-mfe-guest/assets/v0-1-2/remoteEntry.js"
+        },
+        "2.0.2": {
+          "entry": "helloworld@https://github.customerlabs.com.au/pages/iagcl/helloworld-mfe-guest/assets/v0-1-2/remoteEntry.js"
+        }
+    }
+}
