@@ -1,4 +1,6 @@
 import semverMaxSatisfying from "semver/ranges/max-satisfying";
+import semverSort from "semver/ranges/sort";
+
 import versions from "../../registry.json";
 
 export default function handler(req, res) {
@@ -15,6 +17,12 @@ export default function handler(req, res) {
     res.status(404).send("Package not found");
   }
   const packageVersions = Object.keys(pkgInfo.versions);
+  if (range === 'latest') {
+    const sortedVersions = semverSort(packageVersions);
+    const latestVersion = sortedVersions[sortedVersions.length - 1];
+    return res.json({ entry: pkgInfo.versions[latestVersion].entry, });
+  }
+
   const version = semverMaxSatisfying(packageVersions, range);
   if (!version) {
     return res.status(404).send("No version found");
