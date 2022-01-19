@@ -19,9 +19,9 @@ export default function handler(req, res) {
   const packageVersions = Object.keys(pkgInfo.versions);
   const sortedVersions = semverSort(packageVersions);
   const latestVersion = sortedVersions[sortedVersions.length - 1];
-  //if (range === 'latest') {    
-  //  return res.json({ entry: pkgInfo.versions[latestVersion].entry, });
-  //}
+  if (range === 'latest') {    
+   return res.json({ entry: pkgInfo.versions[latestVersion].entry, });
+  }
 
   const version = semverMaxSatisfying(packageVersions, range);
   if (!version) {
